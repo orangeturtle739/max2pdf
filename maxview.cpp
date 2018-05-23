@@ -52,6 +52,7 @@ C           copy        scan and print to default printer, save to 'photocopy' f
 #include "op.h"
 #include "filemax.h"
 #include "filepdf.h"
+#include "podofo/podofo.h"
 
 /*
 extern "C" void rle_test (void);
@@ -105,6 +106,7 @@ static int betterMain(int argc, char *argv[]) {
     betterUsage();
     return 2;
   }
+  PoDoFo::PdfError::EnableLogging(false);
   QFileInfo in = QFileInfo(QFile(QString(argv[1])));
   QFileInfo out = QFileInfo(QFile(QString(argv[2])));
 
