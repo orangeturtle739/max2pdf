@@ -98,7 +98,7 @@ static void usage (void)
 
 static void betterUsage() {
   printf("Usage:\n");
-  printf("maxview <file.max> <file.pdf>\n");
+  printf("max2pdf <file.max> <file.pdf>\n");
 }
 
 static int betterMain(int argc, char *argv[]) {
