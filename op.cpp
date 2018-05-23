@@ -41,8 +41,8 @@ Operation::Operation (QString name, int count, QWidget *parent)
 //    setMinimumDuration (200);
 //    setFocusPolicy (Qt::NoFocus);
    _maximum = count;
-   qDebug () << "operation max" << _maximum;
-   connect (this, SIGNAL (progress(int, QString)), main_widget, SLOT (setProgress (int, QString)));
+   // qDebug () << "operation max" << _maximum;
+   // connect (this, SIGNAL (progress(int, QString)), main_widget, SLOT (setProgress (int, QString)));
    emit progress (-1, name);
    _upto = 0;
    }
@@ -82,11 +82,9 @@ bool Operation::incProgress (int by)
 
    return true;
    }
-   
+
 
 void Operation::setMainWidget (QWidget *widget)
    {
    main_widget = widget;
    }
-
-

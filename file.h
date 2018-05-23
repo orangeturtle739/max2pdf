@@ -217,7 +217,7 @@ public:
 
 
    // image related
-   virtual QPixmap pixmap (bool recalc = false) = 0;
+   // virtual QPixmap pixmap (bool recalc = false) = 0;
 
    /** returns the preview image for a particular page.
 
@@ -445,7 +445,7 @@ protected:
    int _pagenum;        //!< current page visible
 //   int _pagecount;      //!< number of pages
    int _size;       //!< file size
-   QPixmap _pixmap;     //!< preview image for this file
+   // QPixmap _pixmap;     //!< preview image for this file
    QSize _preview_maxsize;     //!< max preview size for file (this is the preview pixmap)
    QSize _title_maxsize;     //!< max pixel size for file (stack) title
    QSize _pagename_maxsize;     //!< max pixel size for all page titles
@@ -534,4 +534,3 @@ public:
    };
 
 #endif
-

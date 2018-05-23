@@ -212,7 +212,7 @@ err_info *Pdfio::addPage (const Filepage *mp)
       image->SetImageColorSpace (mp->_depth <= 8 ? ePdfColorSpace_DeviceGray
             : ePdfColorSpace_DeviceRGB);
       image->SetImageData (mp->_width, mp->_height, mp->_depth == 1 ? 1 : 8, &input);
-      qDebug () << "pdfio: added image depth" << mp->_depth;
+      // qDebug () << "pdfio: added image depth" << mp->_depth;
       PdfRect rect = page->GetPageSize ();
       double w = image->GetWidth ();
       double h = image->GetHeight ();
@@ -602,4 +602,3 @@ err_info *Pdfio::deletePages (int start, int count)
    // close and write changes
    return close ();
 }
-

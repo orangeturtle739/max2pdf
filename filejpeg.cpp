@@ -377,14 +377,14 @@ err_info *Filejpeg::getPreviewInfo (int pagenum, QSize &size, int &bpp)
 
 
 // image related
-QPixmap Filejpeg::pixmap (bool recalc)
-   {
-   err_info *err = NULL;
-
-   if (recalc)
-      err = getPreviewPixmap (_pagenum, _pixmap, false);
-   return err || _pixmap.isNull () ? unknownPixmap () : _pixmap;
-   }
+// QPixmap Filejpeg::pixmap (bool recalc)
+//    {
+//    err_info *err = NULL;
+//
+//    if (recalc)
+//       err = getPreviewPixmap (_pagenum, _pixmap, false);
+//    return err || _pixmap.isNull () ? unknownPixmap () : _pixmap;
+//    }
 
 
 err_info *Filejpeg::getPreviewPixmap (int pagenum, QPixmap &pixmap, bool blank)

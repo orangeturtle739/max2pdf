@@ -5741,15 +5741,15 @@ err_info *Filemax::getPreviewPixmap (int pagenum, QPixmap &pixmap, bool blank)
    }
 
 
-QPixmap Filemax::pixmap (bool recalc)
-   {
-   err_info *err = NULL;
-
-   if (recalc)
-      {
-      err = getPreviewPixmap (_pagenum, _pixmap, false);
-      _pixmap = _pixmap.copy ();
-      }
-
-   return err || _pixmap.isNull () ? unknownPixmap () : _pixmap;
-   }
+// QPixmap Filemax::pixmap (bool recalc)
+//    {
+//    err_info *err = NULL;
+//
+//    if (recalc)
+//       {
+//       err = getPreviewPixmap (_pagenum, _pixmap, false);
+//       _pixmap = _pixmap.copy ();
+//       }
+//
+//    return err || _pixmap.isNull () ? unknownPixmap () : _pixmap;
+//    }

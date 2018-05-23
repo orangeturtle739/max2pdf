@@ -174,7 +174,8 @@ QVariant Desktopmodel::data(const QModelIndex &index, int role) const
    switch (role)
       {
       case Qt::DecorationRole :
-         return QIcon (f->pixmap ());
+         // return QIcon (f->pixmap ());
+         return QIcon();
 
       case Qt::DisplayRole :
       case Qt::EditRole :
@@ -187,7 +188,8 @@ QVariant Desktopmodel::data(const QModelIndex &index, int role) const
          return f->previewMaxsize ();
 
       case Role_pixmap :
-         return f->pixmap ();
+         // return f->pixmap ();
+         return QIcon();
 
       case Role_pagenum :
          return f->pagenum ();
@@ -345,7 +347,7 @@ bool Desktopmodel::setData(const QModelIndex &index, const QVariant &value, int 
       {
       QString pagename;
 
-      f->pixmap (true);
+      // f->pixmap (true);
       //FIXME: better to emit our own signal which tells Desktopdelegate to just update the pixmap
       _minor_change = true;
       emit dataChanged (index, index);
@@ -731,8 +733,8 @@ void Desktopmodel::buildItem (QModelIndex index)
 
    /* if we are asking for a page that has not been added yet, do nothing.
       This happens during scanning */
-   if (f->pagenum () < f->pagecount ())
-      f->pixmap (true);   // regenerate the pixmap
+   // if (f->pagenum () < f->pagecount ())
+   //    f->pixmap (true);   // regenerate the pixmap
 
    /* tell the view that the data has changed. The view will request the
       new data. Note that if we don't have information about the item
@@ -792,7 +794,7 @@ err_info *Desktopmodel::beginScan (QModelIndex parent, const QString &stack_name
        _scan_err = true;
        return err;
    }
-   
+
    // stop this maxdesk from being disposed while we are scanning into it
    desk->setAllowDispose (false);
 
@@ -971,7 +973,7 @@ bool Desktopmodel::getNewScaledImage (Paperscan &scan, const PPage *page,
 #else
          image = image.convertToFormat (QImage::Format_RGB32);
 #endif
-         
+
       image = image.scaled (_scaled_image_size, Qt::KeepAspectRatio);
       if (!image.height ())
          return false;
@@ -1218,7 +1220,7 @@ bool Desktopmodel::checkScanStack (QModelIndexList &list, QModelIndex parent)
    QModelIndex ind;
 
    UNUSED (list);
-   /* if the proposed operation is happening on the same desk as we are 
+   /* if the proposed operation is happening on the same desk as we are
       scanning to, stop it */
    if (_scan_desk == desk)
       {

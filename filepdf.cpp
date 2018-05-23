@@ -251,14 +251,14 @@ err_info *Filepdf::getPreviewInfo (int pagenum, QSize &size, int &bpp)
 
 
 // image related
-QPixmap Filepdf::pixmap (bool recalc)
-   {
-   err_info *err = NULL;
-
-   if (recalc)
-      err = getPreviewPixmap (_pagenum, _pixmap, false);
-   return err || _pixmap.isNull () ? unknownPixmap () : _pixmap;
-   }
+// QPixmap Filepdf::pixmap (bool recalc)
+//    {
+//    err_info *err = NULL;
+//
+//    if (recalc)
+//       err = getPreviewPixmap (_pagenum, _pixmap, false);
+//    return err || _pixmap.isNull () ? unknownPixmap () : _pixmap;
+//    }
 
 
 err_info *Filepdf::getPreviewPixmap (int pagenum, QPixmap &pixmap, bool blank)
@@ -357,7 +357,3 @@ err_info *Filepdf::duplicate (File *&, File::e_type, const QString &,
    supported = false;
    return NULL;
    }
-
-
-
-

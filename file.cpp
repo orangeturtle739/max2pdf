@@ -81,7 +81,7 @@ File::File (File *orig, Desk *new_desk)
    _desk = new_desk;
    _ref_to = orig;
    _type = orig->_type;
-   _pixmap = orig->_pixmap;
+   // _pixmap = orig->_pixmap;
    _filename = orig->_filename;
    _basename = orig->_basename;
    _leaf = orig->_leaf;
@@ -107,10 +107,10 @@ void File::setup (void)
    _preview_maxsize = QSize (-1, -1);
    _title_maxsize = QSize (-1, -1);
    _pagename_maxsize = QSize (-1, -1);
-   if (!unknown)
-      unknown = new QPixmap (":images/images/unknown.xpm");
+   // if (!unknown)
+   //    unknown = new QPixmap (":images/images/unknown.xpm");
 //    Q_ASSERT (!_no_access.isNull ());
-   Q_ASSERT (!unknown->isNull ());
+   // Q_ASSERT (!unknown->isNull ());
    _order = -1;
    _annot_loaded = false;
    _env_loaded = false;
@@ -461,10 +461,10 @@ void File::setValid (bool valid)
    }
 
 
-QPixmap File::pixmap (bool)
-   {
-   return *unknown;
-   }
+// QPixmap File::pixmap (bool)
+//    {
+//    return *unknown;
+//    }
 
 
 int File::pagenum (void)
@@ -1119,8 +1119,8 @@ QImage Filepage::getThumbnail (bool invert) const
    size /= CONFIG_preview_scale;
    QImage thumb = util_smooth_scale_image (image, size);
 
-   qDebug () << "f1" << image.format () << thumb.format ();
-   qDebug () << "width" << thumb.width () << "bpl" << thumb.bytesPerLine ();
+   // qDebug () << "f1" << image.format () << thumb.format ();
+   // qDebug () << "width" << thumb.width () << "bpl" << thumb.bytesPerLine ();
    QPainter p (&thumb);
 
    // debugging
@@ -1158,7 +1158,6 @@ QByteArray Filepage::getThumbnailRaw (bool invert, QImage &image,
       for (int y = 0; y < image.height (); y++)
          buffer.write ((const char *)image.scanLine (y), req_stride);
       }
-   qDebug () << "thumbnail" << image.byteCount () << ba.size ();
+   // qDebug () << "thumbnail" << image.byteCount () << ba.size ();
    return ba;
    }
-

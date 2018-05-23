@@ -191,7 +191,7 @@ public:
 
 
    // image related
-   virtual QPixmap pixmap (bool recalc = false);
+   // virtual QPixmap pixmap (bool recalc = false);
 
    virtual err_info *getPreviewPixmap (int pagenum, QPixmap &pixmap, bool blank);
 

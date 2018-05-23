@@ -145,10 +145,10 @@ err_info *Fileother::getPreviewInfo (int, QSize &, int &)
 
 
 // image related
-QPixmap Fileother::pixmap (bool)
-   {
-   return unknownPixmap ();
-   }
+// QPixmap Fileother::pixmap (bool)
+//    {
+//    return unknownPixmap ();
+//    }
 
 
 
@@ -230,4 +230,3 @@ int Fileother::pagecount (void)
    // assume that there is only one page
    return 1;
    }
-
