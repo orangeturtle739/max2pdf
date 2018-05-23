@@ -6,5 +6,10 @@ which exposes only a very simple command line interface for converting a max
 file to a PDF file:
 ```
 Usage:
-maxview <file.max> <file.pdf>
+max2pdf <file.max> <file.pdf>
 ```
+
+## Installation
+
+**Gentoo:** See `media-gfx/max2pdf` in https://github.com/orangeturtle739/panther.
+
