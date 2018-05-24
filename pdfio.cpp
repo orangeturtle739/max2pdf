@@ -161,7 +161,7 @@ err_info *Pdfio::addPage (const Filepage *mp)
       PdfPage *page;
       PdfPainter painter;
 
-      page = _doc->CreatePage (PdfPage::CreateStandardPageSize (ePdfPageSize_A4));
+      page = _doc->CreatePage (PdfPage::CreateStandardPageSize (ePdfPageSize_Letter));
       if (!page)
          PODOFO_RAISE_ERROR (ePdfError_InvalidHandle);
 
