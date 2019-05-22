@@ -36,6 +36,7 @@ X-Comment: On Debian GNU/Linux systems, the complete text of the GNU General
 #include <QSettings>
 #include <QSplitter>
 #include <QTimer>
+#include <QAction>
 
 #include "qlabel.h"
 #include "qlayout.h"
