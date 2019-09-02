@@ -1,4 +1,4 @@
-Paper Manager
+max2pdf
 =============
 
 A hacked version of Simon Glass' [paperman](https://github.com/sglass68/paperman)
